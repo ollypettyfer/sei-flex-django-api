@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from albums import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('albums/', views.index),
+    path("api/albums/", views.create),
+    path("api/albums/", views.read),
+    path("api/albums/{id}", views.update),
+    path("api/albums/{id}", views.delete),
 ]
